@@ -1,34 +1,23 @@
 {
-  "name": "goof",
-  "description": "A Snyk vulnerable Goof app on Heroku",
-  "repository": "https://github.com/snyk/goof",
-  "logo": "https://snyk.io/wp-content/uploads/title-card-avatar.png",
+  "name": "OWASP Juice Shop",
+  "description": "Probably the most modern and sophisticated insecure web application",
   "keywords": [
-    "snyk",
-    "goof",
-    "heroku",
-    "node",
+    "web security",
+    "web application security",
+    "webappsec",
+    "owasp",
+    "pentest",
+    "pentesting",
     "security",
-    "vulnerabilities"
+    "vulnerable",
+    "vulnerability",
+    "broken",
+    "bodgeit",
+    "ctf",
+    "capture the flag",
+    "awareness"
   ],
-  "image": "heroku/nodejs",
-  "scripts": {},
-  "env": {
-    "MONGOLAB_URI": {
-      "required": true
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1
-    }
-  },
-  "addons": [
-    "mongolab"
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    }
-  ]
+  "website": "https://owasp-juice.shop",
+  "repository": "https://github.com/juice-shop/juice-shop",
+  "logo": "https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo.png"
 }
