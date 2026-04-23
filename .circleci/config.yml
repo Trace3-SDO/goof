@@ -1,0 +1,37 @@
+version: 2.1
+
+orbs:
+  snyk: snyk/snyk@2.3.0
+
+jobs:
+  snyk-code:
+    docker:
+      - image: cimg/node:24.0
+    steps:
+      - checkout
+      - snyk/scan:
+          command: code test
+          monitor-on-build: false
+          fail-on-issues: true
+
+  snyk-open-source:
+    docker:
+      - image: cimg/node:18.0
+    steps:
+      - checkout
+      - snyk/scan:
+          command: test
+          monitor-on-build: false
+          fail-on-issues: true
+
+workflows:
+  snyk-scan-main:
+    jobs:
+      - snyk-code:
+          filters:
+            branches:
+              only: main
+      - snyk-open-source:
+          filters:
+            branches:
+              only: main
