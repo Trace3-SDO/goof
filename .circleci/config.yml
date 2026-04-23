@@ -16,7 +16,7 @@ jobs:
 
   snyk-open-source:
     docker:
-      - image: cimg/node:18.0
+      - image: cimg/node:24.0
     steps:
       - checkout
       - snyk/scan:
@@ -25,13 +25,7 @@ jobs:
           fail-on-issues: true
 
 workflows:
-  snyk-scan-main:
+  snyk-scan:
     jobs:
-      - snyk-code:
-          filters:
-            branches:
-              only: main
-      - snyk-open-source:
-          filters:
-            branches:
-              only: main
+      - snyk-code
+      - snyk-open-source
